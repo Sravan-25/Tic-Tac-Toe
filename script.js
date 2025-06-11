@@ -4,7 +4,7 @@ let newBtn = document.querySelector('#new-btn');
 let msgContainer = document.querySelector('.msg-container');
 let msg = document.querySelector('#msg');
 let draw = document.querySelector('#draw');
-let soundBtn = document.querySelector('#sound-btn');
+// let soundBtn = document.querySelector('#sound-btn');
 let clickSound = document.querySelector('#click-sound');
 let winSound = document.querySelector('#win-sound');
 let drawSound = document.querySelector('#draw-sound');
@@ -116,11 +116,11 @@ const resetGame = () => {
   draw.style.display = 'none';
 };
 
-const toggleSound = () => {
-  soundOn = !soundOn;
-  soundBtn.innerHTML = soundOn ? '🔊 Sound On' : '🔇 Sound Off';
-};
+// const toggleSound = () => {
+//   soundOn = !soundOn;
+//   soundBtn.innerHTML = soundOn ? '🔊 Sound On' : '🔇 Sound Off';
+// };
 
 newBtn.addEventListener('click', resetGame);
 reset.addEventListener('click', resetGame);
-soundBtn.addEventListener('click', toggleSound);
+// soundBtn.addEventListener('click', toggleSound);
