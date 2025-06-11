@@ -6,33 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tic Tac Toe</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <h1>Tic Tac Toe</h1>
-  <div class="container">
-    <div class="game">
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
+  <div class="wrapper">
+    <h1>Tic Tac Toe</h1>
+    <div class="controls">
+      <button id="sound-btn">🔊 Sound On</button>
+      <button id="reset-btn">Reset Game</button>
     </div>
+    <div class="container">
+      <div class="game">
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+      </div>
+    </div>
+    <div class="msg-container hide">
+      <p id="msg">Winner</p>
+      <p id="draw">Draw</p>
+      <button id="new-btn">New Game</button>
+    </div>
+    <audio id="click-sound" src="https://cdn.pixabay.com/audio/2022/03/10/audio_6c2b686f49.mp3"></audio>
+    <audio id="win-sound" src="https://cdn.pixabay.com/audio/2021/08/04/audio_12d5e2a23c.mp3"></audio>
+    <audio id="draw-sound" src="https://cdn.pixabay.com/audio/2022/03/10/audio_6c2b686f49.mp3"></audio>
   </div>
-  <button id="reset-btn">Reset Game</button>
-  <button id="sound-btn">🔊 Sound On</button>
-  <div class="msg-container hide">
-    <p id="msg">Winner</p>
-    <p id="draw">Draw</p>
-    <button id="new-btn">New Game</button>
-  </div>
-  <audio id="click-sound" src="https://cdn.pixabay.com/audio/2022/03/10/audio_6c2b686f49.mp3"></audio>
-  <audio id="win-sound" src="https://cdn.pixabay.com/audio/2022/03/10/audio_6c2b686f49.mp3"></audio>
-  <audio id="draw-sound" src="https://cdn.pixabay.com/audio/2022/03/10/audio_6c2b686f49.mp3"></audio>
   <script src="script.js"></script>
 </body>
 

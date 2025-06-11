@@ -27,7 +27,10 @@ const patterns = [
 boxes.forEach((box) => {
   box.addEventListener('click', () => {
     if (box.innerHTML !== '') return;
-    if (soundOn) clickSound.play();
+    if (soundOn) {
+      clickSound.currentTime = 0;
+      clickSound.play();
+    }
     if (turnO) {
       box.innerHTML = 'O';
       box.classList.add('o');
@@ -46,14 +49,20 @@ boxes.forEach((box) => {
 const showWinner = (winner) => {
   msg.innerHTML = `🎉 Player ${winner} Wins! 🎉`;
   msgContainer.classList.remove('hide');
-  if (soundOn) winSound.play();
+  if (soundOn) {
+    winSound.currentTime = 0;
+    winSound.play();
+  }
   disableBoxes();
 };
 
 const showDraw = () => {
   draw.innerHTML = `🤝 It's a Draw! 🤝`;
   msgContainer.classList.remove('hide');
-  if (soundOn) drawSound.play();
+  if (soundOn) {
+    drawSound.currentTime = 0;
+    drawSound.play();
+  }
   disableBoxes();
 };
 
