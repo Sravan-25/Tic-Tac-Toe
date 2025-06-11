@@ -4,35 +4,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
   <link rel="stylesheet" href="style.css">
-  <title>Tic-Tac-Toe</title>
 </head>
 
 <body>
-    <div class="msg-container hide">
-        <P id="msg">Winner</P>
-        <p id="draw">Draw</p>
-        <button id="new-btn">New Game</button>
+  <h1>Tic Tac Toe</h1>
+  <div class="container">
+    <div class="game">
+      <button class="box"></button>
+      <button class="box"></button>
+      <button class="box"></button>
+      <button class="box"></button>
+      <button class="box"></button>
+      <button class="box"></button>
+      <button class="box"></button>
+      <button class="box"></button>
+      <button class="box"></button>
     </div>
-  <main>
-    <h1>TIc Tac Toe</h1>
-    <div class="container">
-      <div class="game">
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-      </div>
-    </div>
-
-    <button id="reset-btn">Reset Game</button>
-  </main>
-
+  </div>
+  <button id="reset-btn">Reset Game</button>
+  <button id="sound-btn">🔊 Sound On</button>
+  <div class="msg-container hide">
+    <p id="msg">Winner</p>
+    <p id="draw">Draw</p>
+    <button id="new-btn">New Game</button>
+  </div>
+  <audio id="click-sound" src="https://cdn.pixabay.com/audio/2022/03/10/audio_6c2b686f49.mp3"></audio>
+  <audio id="win-sound" src="https://cdn.pixabay.com/audio/2022/03/10/audio_6c2b686f49.mp3"></audio>
+  <audio id="draw-sound" src="https://cdn.pixabay.com/audio/2022/03/10/audio_6c2b686f49.mp3"></audio>
   <script src="script.js"></script>
 </body>
 
