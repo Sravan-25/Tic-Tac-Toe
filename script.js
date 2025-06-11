@@ -24,13 +24,22 @@ const patterns = [
   [6, 7, 8],
 ];
 
+// Play audio with safety check
+const playSound = (sound) => {
+  if (soundOn && sound) {
+    sound.currentTime = 0;
+    sound.play().catch((err) => {
+      console.warn('Audio play blocked:', err);
+    });
+  }
+};
+
 boxes.forEach((box) => {
   box.addEventListener('click', () => {
     if (box.innerHTML !== '') return;
-    if (soundOn) {
-      clickSound.currentTime = 0;
-      clickSound.play();
-    }
+
+    playSound(clickSound);
+
     if (turnO) {
       box.innerHTML = 'O';
       box.classList.add('o');
@@ -40,6 +49,7 @@ boxes.forEach((box) => {
       box.classList.add('x');
       turnO = true;
     }
+
     box.disabled = true;
     moveCount++;
     checkWinner();
@@ -48,26 +58,23 @@ boxes.forEach((box) => {
 
 const showWinner = (winner) => {
   msg.innerHTML = `🎉 Player ${winner} Wins! 🎉`;
+  msg.style.display = 'block';
+  draw.style.display = 'none';
   msgContainer.classList.remove('hide');
-  if (soundOn) {
-    winSound.currentTime = 0;
-    winSound.play();
-  }
+  playSound(winSound);
   disableBoxes();
 };
 
 const showDraw = () => {
   draw.innerHTML = `🤝 It's a Draw! 🤝`;
+  draw.style.display = 'block';
+  msg.style.display = 'none';
   msgContainer.classList.remove('hide');
-  if (soundOn) {
-    drawSound.currentTime = 0;
-    drawSound.play();
-  }
+  playSound(drawSound);
   disableBoxes();
 };
 
 const checkWinner = () => {
-  let isWinner = false;
   for (let pattern of patterns) {
     let pos1Val = boxes[pattern[0]].innerHTML;
     let pos2Val = boxes[pattern[1]].innerHTML;
@@ -76,12 +83,12 @@ const checkWinner = () => {
     if (pos1Val !== '' && pos2Val !== '' && pos3Val !== '') {
       if (pos1Val === pos2Val && pos2Val === pos3Val) {
         showWinner(pos1Val);
-        isWinner = true;
-        break;
+        return; // Stop further checking
       }
     }
   }
-  if (!isWinner && moveCount === 9) {
+
+  if (moveCount === 9) {
     showDraw();
   }
 };
@@ -103,6 +110,10 @@ const resetGame = () => {
   moveCount = 0;
   enableBoxes();
   msgContainer.classList.add('hide');
+  msg.innerHTML = '';
+  draw.innerHTML = '';
+  msg.style.display = 'none';
+  draw.style.display = 'none';
 };
 
 const toggleSound = () => {

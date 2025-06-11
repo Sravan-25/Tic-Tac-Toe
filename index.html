@@ -13,7 +13,6 @@
   <div class="wrapper">
     <h1>Tic Tac Toe</h1>
     <div class="controls">
-      <button id="sound-btn">🔊 Sound On</button>
       <button id="reset-btn">Reset Game</button>
     </div>
     <div class="container">
@@ -34,9 +33,10 @@
       <p id="draw">Draw</p>
       <button id="new-btn">New Game</button>
     </div>
-    <audio id="click-sound" src="https://cdn.pixabay.com/audio/2022/03/10/audio_6c2b686f49.mp3"></audio>
-    <audio id="win-sound" src="https://cdn.pixabay.com/audio/2021/08/04/audio_12d5e2a23c.mp3"></audio>
-    <audio id="draw-sound" src="https://cdn.pixabay.com/audio/2022/03/10/audio_6c2b686f49.mp3"></audio>
+    <audio id="click-sound" preload="auto" type="audio/mpeg" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3"></audio>
+    <audio id="win-sound" preload="auto" type="audio/mpeg" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3"></audio>
+    <audio id="draw-sound" preload="auto" type="audio/mpeg" src="https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3"></audio>
+
   </div>
   <script src="script.js"></script>
 </body>
