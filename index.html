@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tic Tac Toe</title>
+  <link rel="icon" href="favicon.jpeg" type="image/jpeg">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -13,7 +14,7 @@
   <div class="wrapper">
     <h1>Tic Tac Toe</h1>
     <div class="controls">
-      <!-- <button id="sound-btn">🔊 Sound On</button> -->
+      <button id="sound-btn">🔊 Sound On</button>
       <button id="reset-btn">Reset Game</button>
     </div>
     <div class="container">
@@ -34,9 +35,10 @@
       <p id="draw">Draw</p>
       <button id="new-btn">New Game</button>
     </div>
-    <audio id="click-sound" preload="auto" type="audio/mpeg" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3"></audio>
-    <audio id="win-sound" preload="auto" type="audio/mpeg" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3"></audio>
-    <audio id="draw-sound" preload="auto" type="audio/mpeg" src="https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3"></audio>
+    <audio id="click-sound" preload="auto" type="audio/wav" src="audio/click1.wav"></audio>
+    <audio id="win-sound" preload="auto" type="audio/wav" src="audio/win.wav"></audio>
+    <audio id="draw-sound" preload="auto" type="audio/wav" src="audio/draw.wav"></audio>
+
 
   </div>
   <script src="script.js"></script>

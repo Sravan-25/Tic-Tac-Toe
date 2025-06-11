@@ -4,7 +4,7 @@ let newBtn = document.querySelector('#new-btn');
 let msgContainer = document.querySelector('.msg-container');
 let msg = document.querySelector('#msg');
 let draw = document.querySelector('#draw');
-// let soundBtn = document.querySelector('#sound-btn');
+let soundBtn = document.querySelector('#sound-btn');
 let clickSound = document.querySelector('#click-sound');
 let winSound = document.querySelector('#win-sound');
 let drawSound = document.querySelector('#draw-sound');
@@ -24,7 +24,6 @@ const patterns = [
   [6, 7, 8],
 ];
 
-// Play audio with safety check
 const playSound = (sound) => {
   if (soundOn && sound) {
     sound.currentTime = 0;
@@ -114,13 +113,18 @@ const resetGame = () => {
   draw.innerHTML = '';
   msg.style.display = 'none';
   draw.style.display = 'none';
+
+  winSound.pause();
+  winSound.currentTime = 0;
+  drawSound.pause();
+  drawSound.currentTime = 0;
 };
 
-// const toggleSound = () => {
-//   soundOn = !soundOn;
-//   soundBtn.innerHTML = soundOn ? '🔊 Sound On' : '🔇 Sound Off';
-// };
+const toggleSound = () => {
+  soundOn = !soundOn;
+  soundBtn.innerHTML = soundOn ? '🔊 Sound On' : '🔇 Sound Off';
+};
 
 newBtn.addEventListener('click', resetGame);
 reset.addEventListener('click', resetGame);
-// soundBtn.addEventListener('click', toggleSound);
+soundBtn.addEventListener('click', toggleSound);
