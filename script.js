@@ -128,3 +128,4 @@ const toggleSound = () => {
 newBtn.addEventListener('click', resetGame);
 reset.addEventListener('click', resetGame);
 soundBtn.addEventListener('click', toggleSound);
+// game logic
