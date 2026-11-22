@@ -130,3 +130,4 @@ reset.addEventListener('click', resetGame);
 soundBtn.addEventListener('click', toggleSound);
 // game logic
 // win check
+// reset function
